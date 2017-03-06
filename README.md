@@ -1,5 +1,5 @@
 # angular2-s3-upload
-Angular 2 App with a Serverless backend Signing Request to perform S3 operations directly from the client.
+Angular 2 App with a Serverless backend pre-signing S3 bucket requests.
 
 
 # Goal
@@ -10,7 +10,7 @@ This is just an implementation proving the concept and can be further extended t
 
 ## Backend
 
-* Serverless Framework [https://serverless.com/](https://serverless.com/)
+* [Serverless Framework](https://serverless.com/)
     * Featuring AWS Cloud Formation Templates to create AWS Lambda Functions and API Gateway
     * Written in Typescript and transpiled into Javascript using Webpack.
 
@@ -21,3 +21,6 @@ This is just an implementation proving the concept and can be further extended t
     * Angular 2 written in Typescript
 
 
+## Demo
+
+[Access Here](http://angular-s3-upload-fe.s3-website-ap-southeast-2.amazonaws.com/)
