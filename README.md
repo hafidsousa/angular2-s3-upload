@@ -11,13 +11,13 @@ This is just an implementation proving the concept and can be further extended t
 ## Backend
 
 * [Serverless Framework](https://serverless.com/)
-    * Featuring AWS Cloud Formation Templates to create AWS Lambda Functions and API Gateway
+    * Featuring AWS Cloud Formation Templates to create AWS Lambda Functions and API Gateway endpoints.
     * Written in Typescript and transpiled into Javascript using Webpack.
 
 
 ## Frontend
 
-* Using seed repo from [https://github.com/AngularClass/angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter)
+* Using seed repo from [Angular 2 Webpack Starter](https://github.com/AngularClass/angular2-webpack-starter)
     * Angular 2 written in Typescript
 
 
