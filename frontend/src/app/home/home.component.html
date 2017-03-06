@@ -1,0 +1,30 @@
+<div>
+    <h1 class="sample-content">Files List</h1>
+
+    <hr>
+
+    <div>
+
+        <p-dataTable [value]="files"
+                     class="table table-hover table-striped"
+                     [lazy]="true"
+                     [responsive]="false"
+                     [stacked]="stacked"
+                     [rows]="100">
+            <p-column header="Key">
+                <template let-col let-file="rowData" pTemplate type="body">
+                    <strong class="btn-link">
+                        <a href="#" (click)="getUrl(file.key)">
+                        <span class="btn-link">
+                            {{file.key}}
+                        </span>
+                        </a>
+
+                    </strong>
+                </template>
+            </p-column>
+
+        </p-dataTable>
+    </div>
+
+</div>

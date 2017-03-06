@@ -1,0 +1,87 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+
+service: s3-auth
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+frameworkVersion: ">=1.0.0 <2.0.0"
+
+plugins:
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: dev
+  region: ap-southeast-2
+  iamRoleStatements:
+    -  Effect: "Allow"
+       Action:
+         - "s3:ListBucket"
+       Resource:
+         Fn::Join:
+           - ""
+           - - "arn:aws:s3:::"
+             - Ref : "Angular2S3Bucket"
+    -  Effect: "Allow"
+       Action:
+         - "s3:GetObject"
+         - "s3:DeleteObject"
+         - "s3:PutObject"
+       Resource:
+         Fn::Join:
+           - ""
+           - - "arn:aws:s3:::"
+             - Ref : "Angular2S3Bucket"
+             - "/*"
+functions:
+  signRequestGetObject:
+    handler: app.signRequestGetObject
+    description: Sign S3 GET Object Request
+    memorySize: 128 # optional, default is 1024
+    timeout: 10 # optional, default is 6
+    events: # The Events that trigger this Function
+      - http:
+          path: /api/sign-request/get-object
+          method: get
+          cors: true
+
+  signRequestPutObject:
+    handler: app.signRequestPutObject
+    description: Sign S3 PUT Object Request
+    memorySize: 128 # optional, default is 1024
+    timeout: 10 # optional, default is 6
+    events: # The Events that trigger this Function
+      - http:
+          path: /api/sign-request/put-object
+          method: get
+          cors: true
+
+  signRequestListObjects:
+      handler: app.signRequestListObjects
+      description: Sign S3 List Objects Request
+      memorySize: 128 # optional, default is 1024
+      timeout: 10 # optional, default is 6
+      events: # The Events that trigger this Function
+        - http:
+            path: /api/sign-request/list-objects
+            method: get
+            cors: true
+
+# you can add CloudFormation resource templates here
+resources:
+  Resources:
+    Angular2S3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: angular2-s3-upload

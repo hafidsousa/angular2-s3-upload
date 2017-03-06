@@ -1,0 +1,17 @@
+<div>
+    <h1 class="sample-content">File Upload</h1>
+    <h3>Note: Files are uploaded instantaneously.</h3>
+    <hr>
+
+    <div>
+
+        <input type="file" (change)="fileChange($event)" placeholder="Upload file"
+               accept=".jpeg,.jpg,.png,.pdf,.doc,.docx">
+
+
+        <p *ngIf="doneUpload">Uploaded</p>
+        <p *ngIf="inProgressUpload">Uploading...</p>
+
+    </div>
+
+</div>
