@@ -1,0 +1,28 @@
+{
+  "name": "s3-auth",
+  "version": "0.0.1",
+  "description": "Dependencies",
+  "author": "Hafid F Sousa",
+  "keywords": [],
+  "scripts": {
+    "prepublish": "tsc",
+    "pretest": "tsc",
+    "build:dev": "webpack --config webpack.config.js --progress --profile --display-error-details"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "0.0.7",
+    "@types/aws-sdk": "0.0.42",
+    "@types/core-js": "0.9.35",
+    "@types/node": "7.0.5",
+    "@types/uglify-js": "2.6.28",
+    "aws-lambda": "0.1.2",
+    "aws-sdk": "2.22.0",
+    "json-loader": "0.5.4",
+    "serverless-webpack": "^1.0.0-rc.4",
+    "string-replace-loader": "1.0.5",
+    "ts-loader": "^2.0.1",
+    "typescript": "^2.2.1",
+    "uuid": "^3.0.1",
+    "webpack": "^2.2.1"
+  }
+}
