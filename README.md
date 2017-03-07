@@ -6,7 +6,7 @@ Angular 2 App with a Serverless backend pre-signing S3 bucket requests.
 There are few ways one can write client-side code to perform operations in an AWS S3 Bucket.
 
 1. Authenticate with an Identity Provider (e.g. AWS Cognito) and then request upload from the client-side to AWS S3 directly.
-2. Write a backend API to act as a proxy. In this case, the request will flow as Client App --> Backend --> AWS S3 Bucket. While it's secure, it adds unnecessary overhead in the backend API.
+2. Write a backend API to act as a proxy. In this case, the request will flow as Client App --> Backend --> AWS S3 Bucket. While secure it adds unnecessary overhead in the backend API.
 3. Write a backend API to pre-sign requests. In this case, the client-side app will ask for permission to upload a file and then upload the file directly.
 The first step is to request for a pre-signed URL as Client App --> Backend API. Then, with a pre-signed URL upload the file directly to the S3 bucket as Client App --> AWS S3 bucket. In this model, the Client side will perform HTTP operations, and no AWS-SDK dependencies are needed in the Client App.
 
